@@ -1,7 +1,11 @@
 #include <iostream>
+#include "writeboard.h"
 using namespace std;
-
 int main() {
-	cout << "Hello World;";
+writeboard();
+	
+	
+	
+	
 	return 0;
 }
