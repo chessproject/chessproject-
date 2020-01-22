@@ -1,11 +1,8 @@
+#include <stdio.h>
 #include <iostream>
+#include "chess.h"
 #include "writeboard.h"
-using namespace std;
 int main() {
 writeboard();
-	
-	
-	
-	
 	return 0;
 }
