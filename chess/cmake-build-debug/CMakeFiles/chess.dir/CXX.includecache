@@ -1,0 +1,24 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/project/chess/chess.h
+
+C:/project/chess/main.cpp
+stdio.h
+-
+iostream
+-
+chess.h
+C:/project/chess/chess.h
+writeboard.h
+C:/project/chess/writeboard.h
+
+C:/project/chess/writeboard.h
+cstdio
+-
+
