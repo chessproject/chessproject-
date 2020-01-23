@@ -3,6 +3,7 @@
 #include "chess.h"
 #include "writeboard.h"
 int main() {
+    //Chess chess();
     char a;
     int b;
     char c;
@@ -21,7 +22,7 @@ int main() {
 //        }
 //        move(a, b, c, d);
 //    }
-    writeboard();
+    //writeboard();
     cout << "mat!";
     return 0;
 }
