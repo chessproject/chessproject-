@@ -1,3 +1,5 @@
+#include <iostream>
+using namespace std;
 void printBoard(char board[24][40])
 {
     int n=8;

@@ -80,6 +80,9 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="C:/project/chess/board.h">
+			<Option target="chess"/>
+		</Unit>
 		<Unit filename="C:/project/chess/chess.cpp">
 			<Option target="chess"/>
 		</Unit>
@@ -87,6 +90,9 @@
 			<Option target="chess"/>
 		</Unit>
 		<Unit filename="C:/project/chess/main.cpp">
+			<Option target="chess"/>
+		</Unit>
+		<Unit filename="C:/project/chess/print.h">
 			<Option target="chess"/>
 		</Unit>
 		<Unit filename="C:/project/chess/writeboard.h">

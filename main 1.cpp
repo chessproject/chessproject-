@@ -1,5 +1,3 @@
-#include <iostream>
-#include <iostream>
 #include <stdlib.h>
 #include"board.h"
 #include"print.h"
@@ -23,6 +21,6 @@ int main() {
 	
 	
 fillboard(board);
-printboard(board);
+printBoard(board);
 	return 0;
 }
