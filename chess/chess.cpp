@@ -1,4 +1,5 @@
 #include "chess.h"
+#include <cmath>
 
 bool Chess::validPosition(int x, int y) {
     return x > -1 && x < 8 && y > -1 && y < 8;
@@ -102,6 +103,7 @@ vector<Position> Chess::getPossibleMoves(int x, int y) {
 }
 
 bool Chess::cango(char x, int y) {
+    return validPosition(x, y) && !canMove(x, y) && getPiece(x, y) != KING;
 
 }
 
