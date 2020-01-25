@@ -39,7 +39,7 @@ public:
     vector<Position> getPossibleMoves(int x, int y);
     bool isEmpty(int x, int y);
     bool canMove(char x, int y);
-    bool cango(char x,int y);
+    bool canGo(char x,int y);
     void move(char x1,int y1,char x2,int y2);
     bool canMove(int x, int y);
     bool kish();
