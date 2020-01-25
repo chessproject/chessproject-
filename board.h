@@ -1,6 +1,6 @@
 void fillboard(char board[24][40])
 {
-   int n=0,n2=0,c,j,j2,i=-1,i2,d;
+   int n1=0,n2=0,c,j1,j2,i=-1,i2,d;
    for(j2=0;j2<8;j2++)
    {
         if(n2==0)
@@ -9,9 +9,9 @@ void fillboard(char board[24][40])
             {
                 i++;
                 c=-1;
-                for(j=0;j<8;j++)
+                for(j1=0;j1<8;j++)
                 {
-                    if(n==0)
+                    if(n1==0)
                     {
                         for(d=0;d<5;d++)
                         {
@@ -19,7 +19,7 @@ void fillboard(char board[24][40])
                             board[i][c]=(char)219u;
                         }
                     }
-                    else if(n==1)
+                    else if(n1==1)
                     {
                         for(d=0;d<5;d++)
                         {
@@ -27,7 +27,7 @@ void fillboard(char board[24][40])
                            board[i][c]=' ';
                         }
                     }
-                    n==1 ? n=0 : n=1;
+                    n1==1 ? n1=0 : n1=1;
                 }
             }
         }
@@ -37,9 +37,9 @@ void fillboard(char board[24][40])
                 {
                     i++;
                     c=-1;
-                    for(j=0;j<8;j++)
+                    for(j1=0;j1<8;j1++)
                     {
-                        if(n==0)
+                        if(n1==0)
                         {
                             for(d=0;d<5;d++)
                             {
@@ -47,7 +47,7 @@ void fillboard(char board[24][40])
                                 board[i][c]='p';
                             }
                         }
-                        else if(n==1)
+                        else if(n1==1)
                         {
                             for(d=0;d<5;d++)
                             {
@@ -55,7 +55,7 @@ void fillboard(char board[24][40])
                                board[i][c]=(char)219u;
                             }
                         }
-                        n==1 ? n=0 : n=1;
+                        n1==1 ? n1=0 : n1=1;
                     }
                 }
         }
