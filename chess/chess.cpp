@@ -48,6 +48,9 @@ bool Chess::validPosition(int x, int y) {
 ChessBoard Chess::getChessBoard(){
     return chessBoard;
 }
+bool Chess::isOpponent(int x, int y) {
+    return !isEmpty(x, y) && getColor(x, y) != turn;
+}
 
 ChessPiece Chess::getPiece(int x, int y) {
     if (!validPosition(x, y)) return NONE;
@@ -137,6 +140,15 @@ vector<Position> Chess::getPossibleMoves(int x, int y) {
                     if (!isEmpty(x1, y1)) break;
                 }
             }
+            break;
+            case PAWN:
+            x = x + (getColor(x, y) == WHITE ? 1 : -1);
+            if (isEmpty(x, y))
+                possibleMoves.push_back(Position(x, y));
+            if (isOpponent(x, y + 1))
+                possibleMoves.push_back(Position(x, y + 1));
+            if (isOpponent(x, y - 1))
+                possibleMoves.push_back(Position(x, y - 1));
             break;
     }
     return possibleMoves;
