@@ -41,6 +41,7 @@ public:
     Color getColor(int x, int y);
     vector<Position> getPossibleMoves(int x, int y);
     bool isEmpty(int x, int y);
+    bool isOpponent(int x, int y);
     bool canMove(int x, int y);
     bool canGo(char x,int y);
     bool canMove(int x1, int y1, int x2, int y2);
