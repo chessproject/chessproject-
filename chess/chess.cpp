@@ -102,7 +102,7 @@ vector<Position> Chess::getPossibleMoves(int x, int y) {
     return possibleMoves;
 }
 
-bool Chess::cangGo(char x, int y) {
+bool Chess::canGo(char x, int y) {
     return validPosition(x, y) && !canMove(x, y) && getPiece(x, y) != KING;
 
 }
