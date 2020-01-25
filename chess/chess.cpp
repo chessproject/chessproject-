@@ -184,11 +184,11 @@ void Chess::move(int x1, int y1, int x2, int y2) {
 }
 
 bool Chess::kish() {
-
+return false;
 }
 
-bool Chess::mat() {
-
+bool Chess::maat_or_paat() {
+return false;
 }
 
 
