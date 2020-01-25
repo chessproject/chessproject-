@@ -1,6 +1,7 @@
 #include <iostream>
 #include "chess.h"
 void writeBoard(const ChessBoard& chessBoard);
+
 int main() {
     Chess chess(BLACK);
     int a;
@@ -10,7 +11,7 @@ int main() {
     cin >> a >> b >> c >> d;
     if (chess.canMove(a, b, c, d)){
         chess.move(a, b, c, d);
-    chess.turn = chess.turn == WHITE ? BLACK : WHITE;
+        chess.turn = chess.turn == WHITE ? BLACK : WHITE;
 }
 //    while (!mat()) {
 //        writeboard()
@@ -31,6 +32,7 @@ int main() {
 
     return 0;
 }
+
 void writeBoard(const ChessBoard& chessBoard) {
     for (const ChessLine& chessLine : chessBoard) {
         for (ColorChessPiece colorChessPiece : chessLine) {

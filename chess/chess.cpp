@@ -149,7 +149,6 @@ bool Chess::isPossibleMove(int x1, int y1, int x2, int y2) {
     return false;
 }
 
-
 bool Chess::canGo(char x, int y) {
     return validPosition(x, y) && !canMove(x, y);
 }
