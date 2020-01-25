@@ -48,6 +48,7 @@ bool Chess::validPosition(int x, int y) {
 ChessBoard Chess::getChessBoard(){
     return chessBoard;
 }
+
 bool Chess::isOpponent(int x, int y) {
     return !isEmpty(x, y) && getColor(x, y) != turn;
 }
