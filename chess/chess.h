@@ -30,11 +30,12 @@ typedef pair<int, int> Position;
 class Chess {
 private:
     ChessBoard chessBoard;
-    Color turn;
     void initializeChessBoard();
 public:
     Chess();
-    bool validPosition(int x, int y);
+    Color turn;
+    explicit Chess(Color turn);
+    static bool validPosition(int x, int y);
     ChessBoard getChessBoard();
     ChessPiece getPiece(int x, int y);
     Color getColor(int x, int y);
@@ -42,7 +43,9 @@ public:
     bool isEmpty(int x, int y);
     bool canMove(int x, int y);
     bool canGo(char x,int y);
-    void move(char x1,int y1,char x2,int y2);
+    bool canMove(int x1, int y1, int x2, int y2);
+    void move(int x1,int y1, int x2,int y2);
     bool kish();
     bool mat();
+    bool isPossibleMove(int x1, int y1, int x2, int y2);
 };

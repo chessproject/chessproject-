@@ -1,7 +1,16 @@
 #include "chess.h"
 #include <cmath>
 
-Chess::Chess() : turn(WHITE) {
+ColorChessPiece::ColorChessPiece(ChessPiece piece, Color color) {
+    this->piece = piece;
+    this->color = color;
+}
+
+Chess::Chess() : turn(WHITE){
+    initializeChessBoard();
+}
+
+Chess::Chess(Color turn) : turn(turn) {
     initializeChessBoard();
 }
 
@@ -133,15 +142,27 @@ vector<Position> Chess::getPossibleMoves(int x, int y) {
     return possibleMoves;
 }
 
+bool Chess::isPossibleMove(int x1, int y1, int x2, int y2) {
+    for (Position position : getPossibleMoves(x1, y1)) {
+        if (position.first == x2 && position.second == y2) return true;
+    }
+    return false;
+}
+
+
 bool Chess::canGo(char x, int y) {
-    return validPosition(x, y) && !canMove(x, y) && getPiece(x, y) != KING;
+    return validPosition(x, y) && !canMove(x, y);
 }
 
 bool Chess::canMove(int x, int y) {
     return validPosition(x, y) && !isEmpty(x, y) && getColor(x, y) == turn;
 }
 
-void Chess::move(char x1, int y1, char x2, int y2) {
+bool Chess::canMove(int x1, int y1, int x2, int y2) {
+    return canMove(x1, y1) && isPossibleMove(x1, y1, x2, y2);
+}
+
+void Chess::move(int x1, int y1, int x2, int y2) {
     chessBoard[x2][y2] = chessBoard[x1][y1];
     chessBoard[x1][y1].piece = NONE;
     if (getPiece(x2, y2) == PAWN &&
@@ -157,3 +178,6 @@ bool Chess::kish() {
 bool Chess::mat() {
 
 }
+
+
+

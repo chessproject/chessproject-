@@ -1,13 +1,17 @@
-#include <stdio.h>
 #include <iostream>
 #include "chess.h"
-#include "writeboard.h"
+void writeBoard(const ChessBoard& chessBoard);
 int main() {
-    Chess chess();
-    char a;
+    Chess chess(BLACK);
+    int a;
     int b;
-    char c;
+    int c;
     int d;
+    cin >> a >> b >> c >> d;
+    if (chess.canMove(a, b, c, d)){
+        chess.move(a, b, c, d);
+    chess.turn = chess.turn == WHITE ? BLACK : WHITE;
+}
 //    while (!mat()) {
 //        writeboard()
 //        cin >> a >> b;
@@ -22,7 +26,40 @@ int main() {
 //        }
 //        move(a, b, c, d);
 //    }
-    //writeboard();
-    cout << "mat!";
+    writeBoard(chess.getChessBoard());
+    writeBoard(chess.getChessBoard());
+
     return 0;
+}
+void writeBoard(const ChessBoard& chessBoard) {
+    for (const ChessLine& chessLine : chessBoard) {
+        for (ColorChessPiece colorChessPiece : chessLine) {
+            cout << "[";
+            switch (colorChessPiece.piece) {
+                case NONE:
+                    cout << "  ";
+                    break;
+                case KING:
+                    cout << (colorChessPiece.color == WHITE ? "Kb" : "Kw");
+                    break;
+                case QUEEN:
+                    cout << (colorChessPiece.color == WHITE ? "Qb" : "Qw");
+                    break;
+                case BISHOP:
+                    cout << (colorChessPiece.color == WHITE ? "Bb" : "Bw");
+                    break;
+                case KNIGHT:
+                    cout << (colorChessPiece.color == WHITE ? "Kb" : "Kw");
+                    break;
+                case ROOK:
+                    cout << (colorChessPiece.color == WHITE ? "Rb" : "Rw");
+                    break;
+                case PAWN:
+                    cout << (colorChessPiece.color == WHITE ? "Pb" : "Pw");
+                    break;
+            }
+            cout << "]";
+        }
+        cout << endl;
+    }
 }

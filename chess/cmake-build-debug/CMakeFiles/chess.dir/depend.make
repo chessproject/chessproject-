@@ -6,5 +6,4 @@ CMakeFiles/chess.dir/chess.cpp.obj: ../chess.h
 
 CMakeFiles/chess.dir/main.cpp.obj: ../chess.h
 CMakeFiles/chess.dir/main.cpp.obj: ../main.cpp
-CMakeFiles/chess.dir/main.cpp.obj: ../writeboard.h
 
