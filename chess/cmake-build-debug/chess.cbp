@@ -95,9 +95,6 @@
 		<Unit filename="C:/project/chess/print.h">
 			<Option target="chess"/>
 		</Unit>
-		<Unit filename="C:/project/chess/writeboard.h">
-			<Option target="chess"/>
-		</Unit>
 		<Unit filename="C:/project/chess/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>

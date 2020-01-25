@@ -28,7 +28,6 @@ int main() {
 //        move(a, b, c, d);
 //    }
     writeBoard(chess.getChessBoard());
-    writeBoard(chess.getChessBoard());
 
     return 0;
 }

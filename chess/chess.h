@@ -47,6 +47,6 @@ public:
     bool canMove(int x1, int y1, int x2, int y2);
     void move(int x1,int y1, int x2,int y2);
     bool kish();
-    bool mat();
     bool isPossibleMove(int x1, int y1, int x2, int y2);
+    bool maat_or_paat();
 };

@@ -6,6 +6,12 @@
 
 #IncludeRegexTransform: 
 
+C:/project/chess/chess.cpp
+chess.h
+C:/project/chess/chess.h
+cmath
+-
+
 C:/project/chess/chess.h
 vector
 -
