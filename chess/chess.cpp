@@ -1,6 +1,37 @@
 #include "chess.h"
 #include <cmath>
 
+Chess::Chess() : turn(WHITE) {
+    initializeChessBoard();
+}
+
+void Chess::initializeChessBoard() {
+    for (int i = 0; i < 8; ++i) {
+        ChessLine chessLine;
+        for (int j = 0; j < 8; ++j) {
+            Color color = i < 4 ? WHITE : BLACK;
+            if (i == 0 || i == 7) {
+                if (j == 0 || j == 7) {
+                    chessLine.push_back(ColorChessPiece(ROOK, color));
+                } else if (j == 1 || j == 6) {
+                    chessLine.push_back(ColorChessPiece(KNIGHT, color));
+                } else if (j == 2 || j == 5) {
+                    chessLine.push_back(ColorChessPiece(BISHOP, color));
+                } else if (j == 3) {
+                    chessLine.push_back(ColorChessPiece(KING, color));
+                } else {
+                    chessLine.push_back(ColorChessPiece(QUEEN, color));
+                }
+            } else if (i == 1 || i == 6) {
+                chessLine.push_back(ColorChessPiece(PAWN, color));
+            } else {
+                chessLine.push_back(ColorChessPiece(NONE, color));
+            }
+        }
+        chessBoard.push_back(chessLine);
+    }
+}
+
 bool Chess::validPosition(int x, int y) {
     return x > -1 && x < 8 && y > -1 && y < 8;
 }
@@ -104,16 +135,19 @@ vector<Position> Chess::getPossibleMoves(int x, int y) {
 
 bool Chess::canGo(char x, int y) {
     return validPosition(x, y) && !canMove(x, y) && getPiece(x, y) != KING;
-
 }
 
 bool Chess::canMove(int x, int y) {
-
-    return validPosition(x, y) && !isEmpty(x, y) && getColor(x, y) == turn;//incomplete
+    return validPosition(x, y) && !isEmpty(x, y) && getColor(x, y) == turn;
 }
 
 void Chess::move(char x1, int y1, char x2, int y2) {
-
+    chessBoard[x2][y2] = chessBoard[x1][y1];
+    chessBoard[x1][y1].piece = NONE;
+    if (getPiece(x2, y2) == PAWN &&
+        ((getColor(x2, y2) == WHITE && y2 == 7) || (getColor(x2, y2) == BLACK && y2 == 0))) {
+        chessBoard[x2][y2].piece = QUEEN;
+    }
 }
 
 bool Chess::kish() {

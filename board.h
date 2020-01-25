@@ -44,7 +44,7 @@ void fillboard(char board[24][40])
                             for(d=0;d<5;d++)
                             {
                                 c++;
-                                board[i][c]=' ';
+                                board[i][c]='p';
                             }
                         }
                         else if(n==1)

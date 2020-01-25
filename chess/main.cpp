@@ -3,7 +3,7 @@
 #include "chess.h"
 #include "writeboard.h"
 int main() {
-    //Chess chess();
+    Chess chess();
     char a;
     int b;
     char c;
