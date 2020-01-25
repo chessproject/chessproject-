@@ -36,6 +36,7 @@ public:
     ChessBoard getChessBoard();
     ChessPiece getPiece(int x, int y);
     Color getColor(int x, int y);
+    vector<Position> getPossibleMoves(int x, int y);
     bool isEmpty(int x, int y);
     bool canMove(char x, int y);
     bool cango(char x,int y);
