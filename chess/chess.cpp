@@ -80,13 +80,19 @@ bool Chess::isEmpty(int x, int y) {
 vector<Position> Chess::getPossibleMoves(int x, int y) {
     vector<Position> possibleMoves;
     if (getColor(x, y) != turn) return possibleMoves;
+    ColorChessPiece p(NONE,turn==WHITE?BLACK:WHITE);
     switch (getPiece(x, y)) {
         case KING:
             for (int i = -1; i < 2; ++i) {
                 for (int j = -1; j < 2; ++j) {
                     int x1 = x + i, y1 = y + j;
                     if (canGo(x1, y1))
-                        possibleMoves.push_back(Position(x1, y1));
+                        p.piece=getPiece(x1,y1);
+                    move(x,y,x1,y1);
+                    if (!kish(turn))
+                        possibleMoves.push_back(Position(x1,y1));
+                    move(x1,y1,x,y);
+                    chessBoard[x1][y1]=p;
                 }
             }
             break;
@@ -96,7 +102,12 @@ vector<Position> Chess::getPossibleMoves(int x, int y) {
                     int x1 = x + i * (j % 2) * pow(-1, j / 2);
                     int y1 = y + ((j + 1) % 2) * pow(-1, j / 2);
                     if (canGo(x1, y1)) {
-                        possibleMoves.push_back(Position(x1, y1));
+                        p.piece=getPiece(x1,y1);
+                        move(x,y,x1,y1);
+                        if (!kish(turn))
+                            possibleMoves.push_back(Position(x1, y1));
+                        move(x1,y1,x,y);
+                        chessBoard[x1][y1]=p;
                     } else {
                         break;
                     }
@@ -108,7 +119,12 @@ vector<Position> Chess::getPossibleMoves(int x, int y) {
                     int x1 = x + i * pow(-1, j % 2);
                     int y1 = y + i * pow(-1, j % 2 + 1);
                     if (canGo(x1, y1)) {
-                        possibleMoves.push_back(Position(x1, y1));
+                        p.piece=getPiece(x1,y1);
+                        move(x,y,x1,y1);
+                        if (!kish(turn))
+                            possibleMoves.push_back(Position(x1, y1));
+                        move(x1,y1,x,y);
+                        chessBoard[x1][y1]=p;
                     } else {
                         break;
                     }
@@ -122,7 +138,13 @@ vector<Position> Chess::getPossibleMoves(int x, int y) {
                     int x1 = x + i * pow(-1, j % 2);
                     int y1 = y + i * pow(-1, j % 2 + 1);
                     if (canGo(x1, y1)) {
-                        possibleMoves.push_back(Position(x1, y1));
+                        p.piece=getPiece(x1,y1);
+                        move(x,y,x1,y1);
+                        if (!kish(turn)) {
+                            possibleMoves.push_back(Position(x1, y1));
+                        }
+                        move(x1,y1,x,y);
+                        chessBoard[x1][y1]=p;
                     } else {
                         break;
                     }
@@ -134,8 +156,14 @@ vector<Position> Chess::getPossibleMoves(int x, int y) {
             for (int i = 0; i < 8; ++i) {
                 int x1 = x + (2 - (i % 2)) * pow(-1, i / 4);
                 int y1 = y + (2 - ((i + 1) % 2)) * pow(-1, i / 2);
-                if (canGo(x1, y1))
-                    possibleMoves.push_back(Position(x1, y1));
+                if (canGo(x1, y1)) {
+                    p.piece=getPiece(x1,y1);
+                    move(x, y, x1, y1);
+                    if (!kish(turn))
+                        possibleMoves.push_back(Position(x1, y1));
+                    move(x1,y1,x,y);
+                    chessBoard[x1][y1]=p;
+                }
             }
             break;
         case ROOK:
@@ -144,7 +172,12 @@ vector<Position> Chess::getPossibleMoves(int x, int y) {
                     int x1 = x + i * (j % 2) * pow(-1, j / 2);
                     int y1 = y + i * ((j + 1) % 2) * pow(-1, j / 2);
                     if (canGo(x1, y1)) {
-                        possibleMoves.push_back(Position(x1, y1));
+                        p.piece=getPiece(x1,y1);
+                        move(x,y,x1,y1);
+                        if (!kish(turn))
+                            possibleMoves.push_back(Position(x1, y1));
+                        move(x1,y1,x,y);
+                        chessBoard[x1][y1]=p;
                     } else {
                         break;
                     }
@@ -152,7 +185,7 @@ vector<Position> Chess::getPossibleMoves(int x, int y) {
                 }
             }
             break;
-            case PAWN:
+        case PAWN:
             x = x + (getColor(x, y) == WHITE ? 1 : -1);
             if (isEmpty(x, y))
                 possibleMoves.push_back(Position(x, y));
@@ -188,17 +221,34 @@ void Chess::move(int x1, int y1, int x2, int y2) {
     chessBoard[x2][y2] = chessBoard[x1][y1];
     chessBoard[x1][y1].piece = NONE;
     if (getPiece(x2, y2) == PAWN &&
-        ((getColor(x2, y2) == WHITE && y2 == 7) || (getColor(x2, y2) == BLACK && y2 == 0))) {
+        ((getColor(x2, y2) == WHITE && x2 == 7) || (getColor(x2, y2) == BLACK && x2 == 0))) {
         chessBoard[x2][y2].piece = QUEEN;
     }
 }
 
-bool Chess::kish() {
+bool Chess::kish(Color col) {
+    Position kingpos;
+    kingpos = getKing(col);
+    for (int i = 0; i < 8; ++i)
+        for (int j = 0; j < 8; ++j) {
+            if (getColor(i, j) != col) {
+                for (Position position:getPossibleMoves(i,j))
+                    if(position==kingpos) return true;
+            }
+        }
     return false;
 }
 
-bool Chess::maat_or_paat() {
-    return false;
+bool Chess::maat_or_paat(Color col) {
+    Position kingpos;
+    kingpos = getKing(col);
+    for (int i = 0; i < 8; ++i)
+        for (int j = 0; j < 8; ++j) {
+            if (getColor(i, j) == col) {
+                if(!getPossibleMoves(i,j).empty()) return false;
+            }
+        }
+    return true;
 }
 
 
