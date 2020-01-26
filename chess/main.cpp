@@ -2,33 +2,24 @@
 #include "chess.h"
 void writeBoard(const ChessBoard& chessBoard);
 int main() {
+    int x1,y1,x2,y2;
     Chess chess(BLACK);
-    int a;
-    int b;
-    int c;
-    int d;
-    cin >> a >> b >> c >> d;
-    if (chess.canMove(a, b, c, d)){
-        chess.move(a, b, c, d);
-    chess.turn = chess.turn == WHITE ? BLACK : WHITE;
-}
-//    while (!mat()) {
-//        writeboard()
-//        cin >> a >> b;
-//        if (!canmove(a, b)) {
-//            cout << "this ... cannot move\nchose something else" << a << "\n" << b;
-//            cin >> a >> b;
-//        }
-//        cin >> c >> d;
-//        if (!cango(c, d)) {
-//            cout << "chose somewhere else";
-//            cin >> c >> d;
-//        }
-//        move(a, b, c, d);
-//    }
-    writeBoard(chess.getChessBoard());
-    writeBoard(chess.getChessBoard());
-
+    while (!chess.maat_or_paat()) {
+        writeBoard(chess.getChessBoard());
+        cin >> x1 >> y1 >> x2 >> y2;
+        if (chess.canMove(x1, y1, x2, y2)) {
+            chess.move(x1, y1, x2, y2);
+            chess.turn = chess.turn == WHITE ? BLACK : WHITE;
+        }
+        //cout << chess.getPossibleMoves(0, 0).size() << endl;
+        //cout << chess.getPossibleMoves(1, 0).size() << endl;
+        cout << chess.turn << endl;
+    }
+    if (chess.kish()) {
+        cout << "maat" << endl;
+    } else {
+        cout << "paat" << endl;
+    }
     return 0;
 }
 void writeBoard(const ChessBoard& chessBoard) {

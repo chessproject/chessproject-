@@ -36,6 +36,7 @@ public:
     Color turn;
     explicit Chess(Color turn);
     static bool validPosition(int x, int y);
+    Position getKing(Color player);
     ChessBoard getChessBoard();
     ChessPiece getPiece(int x, int y);
     Color getColor(int x, int y);
