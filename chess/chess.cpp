@@ -48,7 +48,6 @@ bool Chess::validPosition(int x, int y) {
 ChessBoard Chess::getChessBoard(){
     return chessBoard;
 }
-<<<<<<< HEAD
 Position Chess::getKing(Color player) {
     for (int i = 0; i < 8; ++i) {
         for (int j = 0; j < 8; ++j) {
@@ -57,9 +56,9 @@ Position Chess::getKing(Color player) {
     }
     return Position(-1, -1);
 }
-=======
 
->>>>>>> 9a7e4dcdfa3c08032e0f45a71e7bb51dc69f7dc1
+
+
 bool Chess::isOpponent(int x, int y) {
     return !isEmpty(x, y) && getColor(x, y) != turn;
 }

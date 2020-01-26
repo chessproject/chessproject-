@@ -6,23 +6,7 @@
 
 #IncludeRegexTransform: 
 
-<<<<<<< HEAD
-C:/Users/kalarayan/Desktop/saalm/chess/chess.cpp
-chess.h
 C:/Users/kalarayan/Desktop/saalm/chess/chess.h
-cmath
--
-
-C:/Users/kalarayan/Desktop/saalm/chess/chess.h
-=======
-C:/project/chess/chess.cpp
-chess.h
-C:/project/chess/chess.h
-cmath
--
-
-C:/project/chess/chess.h
->>>>>>> 9a7e4dcdfa3c08032e0f45a71e7bb51dc69f7dc1
 vector
 -
 
