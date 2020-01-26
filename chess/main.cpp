@@ -7,7 +7,7 @@ int main() {
     char q1,q2;
     int x1,x2;
     Chess chess(BLACK);
-    while (/*!chess.maat_or_paat()*/true) {
+    while (!chess.maat_or_paat(chess.turn)) {
         writeBoard(chess.getChessBoard());
         cin >> q1>> y1 >> q2 >> y2;
         switch (q1) {
@@ -76,7 +76,7 @@ int main() {
         //cout << chess.getPossibleMoves(1, 0).size() << endl;
         cout << chess.turn << endl;
     }
-    if (chess.kish()) {
+    if (chess.kish(chess.turn)) {
         cout << "maat" << endl;
     } else {
         cout << "paat" << endl;
