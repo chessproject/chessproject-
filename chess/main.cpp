@@ -1,12 +1,13 @@
 #include <iostream>
 #include "chess.h"
 void writeBoard(const ChessBoard& chessBoard);
+
 int main() {
     int y1,y2;
     char q1,q2;
     int x1,x2;
     Chess chess(BLACK);
-    while (!chess.maat_or_paat(chess.turn)) {
+    while (/*!chess.maat_or_paat()*/true) {
         writeBoard(chess.getChessBoard());
         cin >> q1>> y1 >> q2 >> y2;
         switch (q1) {
@@ -34,6 +35,9 @@ int main() {
             case 'h':
                 x1=7;
                 break;
+
+
+
         }
         switch (q2) {
             case 'a':
@@ -61,6 +65,9 @@ int main() {
                 x2=7;
                 break;
         }
+
+
+
         if (chess.canMove(y1-1,x1 ,y2-1 ,x2 )) {
             chess.move( y1-1,x1 ,y2-1 ,x2 );
             chess.turn = chess.turn == WHITE ? BLACK : WHITE;
@@ -69,13 +76,14 @@ int main() {
         //cout << chess.getPossibleMoves(1, 0).size() << endl;
         cout << chess.turn << endl;
     }
-    if (chess.kish(chess.turn)) {
+    if (chess.kish()) {
         cout << "maat" << endl;
     } else {
         cout << "paat" << endl;
     }
     return 0;
 }
+
 void writeBoard(const ChessBoard& chessBoard) {
     cout << "  A    B   C   D   E   F   G   H "<<endl;
     int i=1;
@@ -110,6 +118,7 @@ void writeBoard(const ChessBoard& chessBoard) {
         }
         cout<<i;
         i++;
+
         cout << endl;
     }
     cout << "  A    B   C   D   E   F   G   H " << endl;
