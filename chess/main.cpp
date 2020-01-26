@@ -96,22 +96,22 @@ void writeBoard(const ChessBoard& chessBoard) {
                     cout << "  ";
                     break;
                 case KING:
-                    cout << (colorChessPiece.color == WHITE ? "Kb" : "Kw");
+                    cout << (colorChessPiece.color != WHITE ? "Kb" : "Kw");
                     break;
                 case QUEEN:
-                    cout << (colorChessPiece.color == WHITE ? "Qb" : "Qw");
+                    cout << (colorChessPiece.color != WHITE ? "Qb" : "Qw");
                     break;
                 case BISHOP:
-                    cout << (colorChessPiece.color == WHITE ? "Bb" : "Bw");
+                    cout << (colorChessPiece.color != WHITE ? "Bb" : "Bw");
                     break;
                 case KNIGHT:
-                    cout << (colorChessPiece.color == WHITE ? "Kb" : "Kw");
+                    cout << (colorChessPiece.color != WHITE ? "Kb" : "Kw");
                     break;
                 case ROOK:
-                    cout << (colorChessPiece.color == WHITE ? "Rb" : "Rw");
+                    cout << (colorChessPiece.color != WHITE ? "Rb" : "Rw");
                     break;
                 case PAWN:
-                    cout << (colorChessPiece.color == WHITE ? "Pb" : "Pw");
+                    cout << (colorChessPiece.color != WHITE ? "Pb" : "Pw");
                     break;
             }
             cout << "]";
