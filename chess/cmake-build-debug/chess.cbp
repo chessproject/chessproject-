@@ -97,7 +97,11 @@
 		<Unit filename="C:/Users/kalarayan/Desktop/saalm/chess/print.h">
 			<Option target="chess"/>
 		</Unit>
+<<<<<<< HEAD
 		<Unit filename="C:/Users/kalarayan/Desktop/saalm/chess/CMakeLists.txt">
+=======
+		<Unit filename="C:/project/chess/CMakeLists.txt">
+>>>>>>> 9a7e4dcdfa3c08032e0f45a71e7bb51dc69f7dc1
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>
