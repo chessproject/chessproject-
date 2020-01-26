@@ -48,6 +48,16 @@ bool Chess::validPosition(int x, int y) {
 ChessBoard Chess::getChessBoard(){
     return chessBoard;
 }
+Position Chess::getKing(Color player) {
+    for (int i = 0; i < 8; ++i) {
+        for (int j = 0; j < 8; ++j) {
+            if (getPiece(i, j) == KING && getColor(i, j) == player) return Position(i, j);
+        }
+    }
+    return Position(-1, -1);
+}
+
+
 
 bool Chess::isOpponent(int x, int y) {
     return !isEmpty(x, y) && getColor(x, y) != turn;
@@ -70,16 +80,19 @@ bool Chess::isEmpty(int x, int y) {
 vector<Position> Chess::getPossibleMoves(int x, int y) {
     vector<Position> possibleMoves;
     if (getColor(x, y) != turn) return possibleMoves;
+    ColorChessPiece p(NONE,turn==WHITE?BLACK:WHITE);
     switch (getPiece(x, y)) {
         case KING:
             for (int i = -1; i < 2; ++i) {
                 for (int j = -1; j < 2; ++j) {
                     int x1 = x + i, y1 = y + j;
                     if (canGo(x1, y1))
-                        move(x,y,x1,y1);
+                        p.piece=getPiece(x1,y1);
+                    move(x,y,x1,y1);
                     if (!kish(turn))
-                        possibleMoves.push_back(Position(x1, y1));
+                        possibleMoves.push_back(Position(x1,y1));
                     move(x1,y1,x,y);
+                    chessBoard[x1][y1]=p;
                 }
             }
             break;
@@ -89,10 +102,12 @@ vector<Position> Chess::getPossibleMoves(int x, int y) {
                     int x1 = x + i * (j % 2) * pow(-1, j / 2);
                     int y1 = y + ((j + 1) % 2) * pow(-1, j / 2);
                     if (canGo(x1, y1)) {
+                        p.piece=getPiece(x1,y1);
                         move(x,y,x1,y1);
                         if (!kish(turn))
                             possibleMoves.push_back(Position(x1, y1));
                         move(x1,y1,x,y);
+                        chessBoard[x1][y1]=p;
                     } else {
                         break;
                     }
@@ -104,10 +119,12 @@ vector<Position> Chess::getPossibleMoves(int x, int y) {
                     int x1 = x + i * pow(-1, j % 2);
                     int y1 = y + i * pow(-1, j % 2 + 1);
                     if (canGo(x1, y1)) {
+                        p.piece=getPiece(x1,y1);
                         move(x,y,x1,y1);
                         if (!kish(turn))
                             possibleMoves.push_back(Position(x1, y1));
                         move(x1,y1,x,y);
+                        chessBoard[x1][y1]=p;
                     } else {
                         break;
                     }
@@ -121,11 +138,13 @@ vector<Position> Chess::getPossibleMoves(int x, int y) {
                     int x1 = x + i * pow(-1, j % 2);
                     int y1 = y + i * pow(-1, j % 2 + 1);
                     if (canGo(x1, y1)) {
+                        p.piece=getPiece(x1,y1);
                         move(x,y,x1,y1);
                         if (!kish(turn)) {
                             possibleMoves.push_back(Position(x1, y1));
                         }
                         move(x1,y1,x,y);
+                        chessBoard[x1][y1]=p;
                     } else {
                         break;
                     }
@@ -138,10 +157,12 @@ vector<Position> Chess::getPossibleMoves(int x, int y) {
                 int x1 = x + (2 - (i % 2)) * pow(-1, i / 4);
                 int y1 = y + (2 - ((i + 1) % 2)) * pow(-1, i / 2);
                 if (canGo(x1, y1)) {
+                    p.piece=getPiece(x1,y1);
                     move(x, y, x1, y1);
                     if (!kish(turn))
                         possibleMoves.push_back(Position(x1, y1));
                     move(x1,y1,x,y);
+                    chessBoard[x1][y1]=p;
                 }
             }
             break;
@@ -151,10 +172,12 @@ vector<Position> Chess::getPossibleMoves(int x, int y) {
                     int x1 = x + i * (j % 2) * pow(-1, j / 2);
                     int y1 = y + i * ((j + 1) % 2) * pow(-1, j / 2);
                     if (canGo(x1, y1)) {
+                        p.piece=getPiece(x1,y1);
                         move(x,y,x1,y1);
                         if (!kish(turn))
                             possibleMoves.push_back(Position(x1, y1));
                         move(x1,y1,x,y);
+                        chessBoard[x1][y1]=p;
                     } else {
                         break;
                     }
@@ -198,7 +221,7 @@ void Chess::move(int x1, int y1, int x2, int y2) {
     chessBoard[x2][y2] = chessBoard[x1][y1];
     chessBoard[x1][y1].piece = NONE;
     if (getPiece(x2, y2) == PAWN &&
-        ((getColor(x2, y2) == WHITE && y2 == 7) || (getColor(x2, y2) == BLACK && y2 == 0))) {
+        ((getColor(x2, y2) == WHITE && x2 == 7) || (getColor(x2, y2) == BLACK && x2 == 0))) {
         chessBoard[x2][y2].piece = QUEEN;
     }
 }
