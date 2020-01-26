@@ -121,5 +121,6 @@ void writeBoard(const ChessBoard& chessBoard) {
 
         cout << endl;
     }
-    cout << "  A    B   C   D   E   F   G   H " << endl;
+    cout << "  A    B   C   D   E   F   G   H " << endl << endl;
+getchar();
 }

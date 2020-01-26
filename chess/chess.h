@@ -47,7 +47,7 @@ public:
     bool canGo(char x,int y);
     bool canMove(int x1, int y1, int x2, int y2);
     void move(int x1,int y1, int x2,int y2);
-    bool kish(color col);
-    bool maat_or_paat(color col);
+    bool kish(Color col);
+    bool maat_or_paat(Color col);
     bool isPossibleMove(int x1, int y1, int x2, int y2);
 };
