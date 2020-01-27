@@ -1,5 +1,7 @@
 #include <iostream>
+#include <bits/stdc++.h>
 #include "chess.h"
+
 void writeBoard(const ChessBoard& chessBoard);
 
 int main() {
@@ -35,9 +37,6 @@ int main() {
             case 'h':
                 x1=7;
                 break;
-
-
-
         }
         switch (q2) {
             case 'a':
@@ -65,16 +64,20 @@ int main() {
                 x2=7;
                 break;
         }
-
-
-
-        if (chess.canMove(y1-1,x1 ,y2-1 ,x2 )) {
-            chess.move( y1-1,x1 ,y2-1 ,x2 );
+        ColorChessPiece p(NONE,chess.turn==WHITE?BLACK:WHITE);
+        if (chess.canMove(y1-1,x1 ,y2-1 ,x2 )){
+            p.piece = chess.getPiece(y2-1, x2);
+            chess.move(y1-1,x1 ,y2-1 ,x2 );
+            if (!chess.kish(chess.turn)){
             chess.turn = chess.turn == WHITE ? BLACK : WHITE;
+            }
+            else {
+                chess.move(y2 - 1, x2, y1 - 1, x1);
+                chess.chessBoard[y2-1][x2] = p;
+                cout<<"kish"<<endl;
+            }
+
         }
-        //cout << chess.getPossibleMoves(0, 0).size() << endl;
-        //cout << chess.getPossibleMoves(1, 0).size() << endl;
-        cout << chess.turn << endl;
     }
     if (chess.kish(chess.turn)) {
         cout << "maat" << endl;
@@ -96,22 +99,22 @@ void writeBoard(const ChessBoard& chessBoard) {
                     cout << "  ";
                     break;
                 case KING:
-                    cout << (colorChessPiece.color == WHITE ? "Kb" : "Kw");
+                    cout << (colorChessPiece.color != WHITE ? "Kb" : "Kw");
                     break;
                 case QUEEN:
-                    cout << (colorChessPiece.color == WHITE ? "Qb" : "Qw");
+                    cout << (colorChessPiece.color != WHITE ? "Qb" : "Qw");
                     break;
                 case BISHOP:
-                    cout << (colorChessPiece.color == WHITE ? "Bb" : "Bw");
+                    cout << (colorChessPiece.color != WHITE ? "Bb" : "Bw");
                     break;
                 case KNIGHT:
-                    cout << (colorChessPiece.color == WHITE ? "Kb" : "Kw");
+                    cout << (colorChessPiece.color != WHITE ? "Hb" : "Hw");
                     break;
                 case ROOK:
-                    cout << (colorChessPiece.color == WHITE ? "Rb" : "Rw");
+                    cout << (colorChessPiece.color != WHITE ? "Rb" : "Rw");
                     break;
                 case PAWN:
-                    cout << (colorChessPiece.color == WHITE ? "Pb" : "Pw");
+                    cout << (colorChessPiece.color != WHITE ? "Pb" : "Pw");
                     break;
             }
             cout << "]";

@@ -2,106 +2,94 @@
 <CodeBlocks_project_file>
 	<FileVersion major="1" minor="6"/>
 	<Project>
-		<Option title="chess"/>
+		<Option title="Chess"/>
 		<Option makefile_is_custom="1"/>
 		<Option compiler="gcc"/>
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="C:/Users/kalarayan/Desktop/saalm/chess/cmake-build-debug"/>
+				<Option working_dir="C:/project/Chess/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="D:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/kalarayan/Desktop/saalm/chess/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="D:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/kalarayan/Desktop/saalm/chess/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="D:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/kalarayan/Desktop/saalm/chess/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="D:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/kalarayan/Desktop/saalm/chess/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/PROGRA~2/CODEBL~1/MinGW/bin/mingw32-make.exe -f &quot;C:/project/Chess/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="C:/PROGRA~2/CODEBL~1/MinGW/bin/mingw32-make.exe -f &quot;C:/project/Chess/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/PROGRA~2/CODEBL~1/MinGW/bin/mingw32-make.exe -f &quot;C:/project/Chess/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/PROGRA~2/CODEBL~1/MinGW/bin/mingw32-make.exe -f &quot;C:/project/Chess/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
-			<Target title="chess">
-				<Option output="C:/Users/kalarayan/Desktop/saalm/chess/cmake-build-debug/chess.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="C:/Users/kalarayan/Desktop/saalm/chess/cmake-build-debug"/>
+			<Target title="Chess">
+				<Option output="C:/project/Chess/cmake-build-debug/Chess.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/project/Chess/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="d:\mingw\bin\../lib/gcc/mingw32/8.2.0/include/c++"/>
-					<Add directory="d:\mingw\bin\../lib/gcc/mingw32/8.2.0/include/c++/mingw32"/>
-					<Add directory="d:\mingw\bin\../lib/gcc/mingw32/8.2.0/include/c++/backward"/>
-					<Add directory="d:\mingw\bin\../lib/gcc/mingw32/8.2.0/include"/>
-					<Add directory="d:\mingw\bin\../lib/gcc/mingw32/8.2.0/../../../../include"/>
-					<Add directory="d:\mingw\bin\../lib/gcc/mingw32/8.2.0/include-fixed"/>
-					<Add directory="/mingw/lib/gcc/mingw32/8.2.0/../../../../include"/>
+					<Add directory="C:/Program Files (x86)/CodeBlocks/MinGW/bin/../lib/gcc/mingw32/5.1.0/include/c++"/>
+					<Add directory="C:/Program Files (x86)/CodeBlocks/MinGW/bin/../lib/gcc/mingw32/5.1.0/include/c++/mingw32"/>
+					<Add directory="C:/Program Files (x86)/CodeBlocks/MinGW/bin/../lib/gcc/mingw32/5.1.0/include/c++/backward"/>
+					<Add directory="C:/Program Files (x86)/CodeBlocks/MinGW/bin/../lib/gcc/mingw32/5.1.0/include"/>
+					<Add directory="C:/Program Files (x86)/CodeBlocks/MinGW/bin/../lib/gcc/mingw32/5.1.0/../../../../include"/>
+					<Add directory="C:/Program Files (x86)/CodeBlocks/MinGW/bin/../lib/gcc/mingw32/5.1.0/include-fixed"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="D:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/kalarayan/Desktop/saalm/chess/cmake-build-debug/Makefile&quot;  VERBOSE=1 chess"/>
-					<CompileFile command="D:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/kalarayan/Desktop/saalm/chess/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="D:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/kalarayan/Desktop/saalm/chess/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="D:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/kalarayan/Desktop/saalm/chess/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/PROGRA~2/CODEBL~1/MinGW/bin/mingw32-make.exe -f &quot;C:/project/Chess/cmake-build-debug/Makefile&quot;  VERBOSE=1 Chess"/>
+					<CompileFile command="C:/PROGRA~2/CODEBL~1/MinGW/bin/mingw32-make.exe -f &quot;C:/project/Chess/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/PROGRA~2/CODEBL~1/MinGW/bin/mingw32-make.exe -f &quot;C:/project/Chess/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/PROGRA~2/CODEBL~1/MinGW/bin/mingw32-make.exe -f &quot;C:/project/Chess/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
-			<Target title="chess/fast">
-				<Option output="C:/Users/kalarayan/Desktop/saalm/chess/cmake-build-debug/chess.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="C:/Users/kalarayan/Desktop/saalm/chess/cmake-build-debug"/>
+			<Target title="Chess/fast">
+				<Option output="C:/project/Chess/cmake-build-debug/Chess.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/project/Chess/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="d:\mingw\bin\../lib/gcc/mingw32/8.2.0/include/c++"/>
-					<Add directory="d:\mingw\bin\../lib/gcc/mingw32/8.2.0/include/c++/mingw32"/>
-					<Add directory="d:\mingw\bin\../lib/gcc/mingw32/8.2.0/include/c++/backward"/>
-					<Add directory="d:\mingw\bin\../lib/gcc/mingw32/8.2.0/include"/>
-					<Add directory="d:\mingw\bin\../lib/gcc/mingw32/8.2.0/../../../../include"/>
-					<Add directory="d:\mingw\bin\../lib/gcc/mingw32/8.2.0/include-fixed"/>
-					<Add directory="/mingw/lib/gcc/mingw32/8.2.0/../../../../include"/>
+					<Add directory="C:/Program Files (x86)/CodeBlocks/MinGW/bin/../lib/gcc/mingw32/5.1.0/include/c++"/>
+					<Add directory="C:/Program Files (x86)/CodeBlocks/MinGW/bin/../lib/gcc/mingw32/5.1.0/include/c++/mingw32"/>
+					<Add directory="C:/Program Files (x86)/CodeBlocks/MinGW/bin/../lib/gcc/mingw32/5.1.0/include/c++/backward"/>
+					<Add directory="C:/Program Files (x86)/CodeBlocks/MinGW/bin/../lib/gcc/mingw32/5.1.0/include"/>
+					<Add directory="C:/Program Files (x86)/CodeBlocks/MinGW/bin/../lib/gcc/mingw32/5.1.0/../../../../include"/>
+					<Add directory="C:/Program Files (x86)/CodeBlocks/MinGW/bin/../lib/gcc/mingw32/5.1.0/include-fixed"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="D:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/kalarayan/Desktop/saalm/chess/cmake-build-debug/Makefile&quot;  VERBOSE=1 chess/fast"/>
-					<CompileFile command="D:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/kalarayan/Desktop/saalm/chess/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="D:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/kalarayan/Desktop/saalm/chess/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="D:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/kalarayan/Desktop/saalm/chess/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/PROGRA~2/CODEBL~1/MinGW/bin/mingw32-make.exe -f &quot;C:/project/Chess/cmake-build-debug/Makefile&quot;  VERBOSE=1 Chess/fast"/>
+					<CompileFile command="C:/PROGRA~2/CODEBL~1/MinGW/bin/mingw32-make.exe -f &quot;C:/project/Chess/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/PROGRA~2/CODEBL~1/MinGW/bin/mingw32-make.exe -f &quot;C:/project/Chess/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/PROGRA~2/CODEBL~1/MinGW/bin/mingw32-make.exe -f &quot;C:/project/Chess/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="C:/Users/kalarayan/Desktop/saalm/chess/cmake-build-debug"/>
+				<Option working_dir="C:/project/Chess/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="D:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/kalarayan/Desktop/saalm/chess/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="D:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/kalarayan/Desktop/saalm/chess/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="D:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/kalarayan/Desktop/saalm/chess/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="D:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/kalarayan/Desktop/saalm/chess/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/PROGRA~2/CODEBL~1/MinGW/bin/mingw32-make.exe -f &quot;C:/project/Chess/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="C:/PROGRA~2/CODEBL~1/MinGW/bin/mingw32-make.exe -f &quot;C:/project/Chess/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/PROGRA~2/CODEBL~1/MinGW/bin/mingw32-make.exe -f &quot;C:/project/Chess/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/PROGRA~2/CODEBL~1/MinGW/bin/mingw32-make.exe -f &quot;C:/project/Chess/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="C:/Users/kalarayan/Desktop/saalm/chess/cmake-build-debug"/>
+				<Option working_dir="C:/project/Chess/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="D:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/kalarayan/Desktop/saalm/chess/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="D:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/kalarayan/Desktop/saalm/chess/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="D:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/kalarayan/Desktop/saalm/chess/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="D:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/kalarayan/Desktop/saalm/chess/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/PROGRA~2/CODEBL~1/MinGW/bin/mingw32-make.exe -f &quot;C:/project/Chess/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="C:/PROGRA~2/CODEBL~1/MinGW/bin/mingw32-make.exe -f &quot;C:/project/Chess/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/PROGRA~2/CODEBL~1/MinGW/bin/mingw32-make.exe -f &quot;C:/project/Chess/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/PROGRA~2/CODEBL~1/MinGW/bin/mingw32-make.exe -f &quot;C:/project/Chess/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="C:/Users/kalarayan/Desktop/saalm/chess/board.h">
-			<Option target="chess"/>
+		<Unit filename="C:/project/Chess/chess.cpp">
+			<Option target="Chess"/>
 		</Unit>
-		<Unit filename="C:/Users/kalarayan/Desktop/saalm/chess/chess.cpp">
-			<Option target="chess"/>
+		<Unit filename="C:/project/Chess/chess.h">
+			<Option target="Chess"/>
 		</Unit>
-		<Unit filename="C:/Users/kalarayan/Desktop/saalm/chess/chess.h">
-			<Option target="chess"/>
+		<Unit filename="C:/project/Chess/main.cpp">
+			<Option target="Chess"/>
 		</Unit>
-		<Unit filename="C:/Users/kalarayan/Desktop/saalm/chess/main.cpp">
-			<Option target="chess"/>
-		</Unit>
-		<Unit filename="C:/Users/kalarayan/Desktop/saalm/chess/print.h">
-			<Option target="chess"/>
-		</Unit>
-<<<<<<< HEAD
-		<Unit filename="C:/Users/kalarayan/Desktop/saalm/chess/CMakeLists.txt">
-=======
-		<Unit filename="C:/project/chess/CMakeLists.txt">
->>>>>>> 9a7e4dcdfa3c08032e0f45a71e7bb51dc69f7dc1
+		<Unit filename="C:/project/Chess/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>

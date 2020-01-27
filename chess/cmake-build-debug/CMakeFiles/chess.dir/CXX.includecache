@@ -6,13 +6,15 @@
 
 #IncludeRegexTransform: 
 
-C:/Users/kalarayan/Desktop/saalm/chess/chess.h
+C:/project/Chess/chess.h
 vector
 -
 
-C:/Users/kalarayan/Desktop/saalm/chess/main.cpp
+C:/project/Chess/main.cpp
 iostream
 -
+bits/stdc++.h
+-
 chess.h
-C:/Users/kalarayan/Desktop/saalm/chess/chess.h
+C:/project/Chess/chess.h
 

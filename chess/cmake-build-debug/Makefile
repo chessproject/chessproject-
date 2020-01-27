@@ -38,19 +38,19 @@ cmake_force:
 SHELL = cmd.exe
 
 # The CMake executable.
-CMAKE_COMMAND = "C:\Users\kalarayan\AppData\Local\JetBrains\CLion 2019.3.2\bin\cmake\win\bin\cmake.exe"
+CMAKE_COMMAND = "C:\Program Files\JetBrains\CLion 2019.2.5\bin\cmake\win\bin\cmake.exe"
 
 # The command to remove a file.
-RM = "C:\Users\kalarayan\AppData\Local\JetBrains\CLion 2019.3.2\bin\cmake\win\bin\cmake.exe" -E remove -f
+RM = "C:\Program Files\JetBrains\CLion 2019.2.5\bin\cmake\win\bin\cmake.exe" -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = C:\Users\kalarayan\Desktop\saalm\chess
+CMAKE_SOURCE_DIR = C:\project\Chess
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = C:\Users\kalarayan\Desktop\saalm\chess\cmake-build-debug
+CMAKE_BINARY_DIR = C:\project\Chess\cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -58,7 +58,7 @@ CMAKE_BINARY_DIR = C:\Users\kalarayan\Desktop\saalm\chess\cmake-build-debug
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	"C:\Users\kalarayan\AppData\Local\JetBrains\CLion 2019.3.2\bin\cmake\win\bin\cmake.exe" -E echo "No interactive CMake dialog available."
+	"C:\Program Files\JetBrains\CLion 2019.2.5\bin\cmake\win\bin\cmake.exe" -E echo "No interactive CMake dialog available."
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -69,7 +69,7 @@ edit_cache/fast: edit_cache
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	"C:\Users\kalarayan\AppData\Local\JetBrains\CLion 2019.3.2\bin\cmake\win\bin\cmake.exe" -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	"C:\Program Files\JetBrains\CLion 2019.2.5\bin\cmake\win\bin\cmake.exe" -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -79,9 +79,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\kalarayan\Desktop\saalm\chess\cmake-build-debug\CMakeFiles C:\Users\kalarayan\Desktop\saalm\chess\cmake-build-debug\CMakeFiles\progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\project\Chess\cmake-build-debug\CMakeFiles C:\project\Chess\cmake-build-debug\CMakeFiles\progress.marks
 	$(MAKE) -f CMakeFiles\Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\kalarayan\Desktop\saalm\chess\cmake-build-debug\CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\project\Chess\cmake-build-debug\CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -110,17 +110,17 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named chess
+# Target rules for targets named Chess
 
 # Build rule for target.
-chess: cmake_check_build_system
-	$(MAKE) -f CMakeFiles\Makefile2 chess
-.PHONY : chess
+Chess: cmake_check_build_system
+	$(MAKE) -f CMakeFiles\Makefile2 Chess
+.PHONY : Chess
 
 # fast build rule for target.
-chess/fast:
-	$(MAKE) -f CMakeFiles\chess.dir\build.make CMakeFiles/chess.dir/build
-.PHONY : chess/fast
+Chess/fast:
+	$(MAKE) -f CMakeFiles\Chess.dir\build.make CMakeFiles/Chess.dir/build
+.PHONY : Chess/fast
 
 chess.obj: chess.cpp.obj
 
@@ -128,7 +128,7 @@ chess.obj: chess.cpp.obj
 
 # target to build an object file
 chess.cpp.obj:
-	$(MAKE) -f CMakeFiles\chess.dir\build.make CMakeFiles/chess.dir/chess.cpp.obj
+	$(MAKE) -f CMakeFiles\Chess.dir\build.make CMakeFiles/Chess.dir/chess.cpp.obj
 .PHONY : chess.cpp.obj
 
 chess.i: chess.cpp.i
@@ -137,7 +137,7 @@ chess.i: chess.cpp.i
 
 # target to preprocess a source file
 chess.cpp.i:
-	$(MAKE) -f CMakeFiles\chess.dir\build.make CMakeFiles/chess.dir/chess.cpp.i
+	$(MAKE) -f CMakeFiles\Chess.dir\build.make CMakeFiles/Chess.dir/chess.cpp.i
 .PHONY : chess.cpp.i
 
 chess.s: chess.cpp.s
@@ -146,7 +146,7 @@ chess.s: chess.cpp.s
 
 # target to generate assembly for a file
 chess.cpp.s:
-	$(MAKE) -f CMakeFiles\chess.dir\build.make CMakeFiles/chess.dir/chess.cpp.s
+	$(MAKE) -f CMakeFiles\Chess.dir\build.make CMakeFiles/Chess.dir/chess.cpp.s
 .PHONY : chess.cpp.s
 
 main.obj: main.cpp.obj
@@ -155,7 +155,7 @@ main.obj: main.cpp.obj
 
 # target to build an object file
 main.cpp.obj:
-	$(MAKE) -f CMakeFiles\chess.dir\build.make CMakeFiles/chess.dir/main.cpp.obj
+	$(MAKE) -f CMakeFiles\Chess.dir\build.make CMakeFiles/Chess.dir/main.cpp.obj
 .PHONY : main.cpp.obj
 
 main.i: main.cpp.i
@@ -164,7 +164,7 @@ main.i: main.cpp.i
 
 # target to preprocess a source file
 main.cpp.i:
-	$(MAKE) -f CMakeFiles\chess.dir\build.make CMakeFiles/chess.dir/main.cpp.i
+	$(MAKE) -f CMakeFiles\Chess.dir\build.make CMakeFiles/Chess.dir/main.cpp.i
 .PHONY : main.cpp.i
 
 main.s: main.cpp.s
@@ -173,7 +173,7 @@ main.s: main.cpp.s
 
 # target to generate assembly for a file
 main.cpp.s:
-	$(MAKE) -f CMakeFiles\chess.dir\build.make CMakeFiles/chess.dir/main.cpp.s
+	$(MAKE) -f CMakeFiles\Chess.dir\build.make CMakeFiles/Chess.dir/main.cpp.s
 .PHONY : main.cpp.s
 
 # Help Target
@@ -182,7 +182,7 @@ help:
 	@echo ... all (the default if no target is provided)
 	@echo ... clean
 	@echo ... depend
-	@echo ... chess
+	@echo ... Chess
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... chess.obj

@@ -1,13 +1,13 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/chess.dir/chess.cpp.obj"
-  "CMakeFiles/chess.dir/main.cpp.obj"
-  "chess.exe"
-  "chess.exe.manifest"
-  "chess.pdb"
-  "libchess.dll.a"
+  "CMakeFiles/Chess.dir/chess.cpp.obj"
+  "CMakeFiles/Chess.dir/main.cpp.obj"
+  "Chess.exe"
+  "Chess.exe.manifest"
+  "Chess.pdb"
+  "libChess.dll.a"
 )
 
 # Per-language clean rules from dependency scanning.
 foreach(lang CXX)
-  include(CMakeFiles/chess.dir/cmake_clean_${lang}.cmake OPTIONAL)
+  include(CMakeFiles/Chess.dir/cmake_clean_${lang}.cmake OPTIONAL)
 endforeach()
